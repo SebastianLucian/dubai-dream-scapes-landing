@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				nexora: {
+					gold: '#D4AF37',
+					purple: '#8A4D9F',
+					dark: '#1A1F2C',
+					light: '#F8F9FA'
 				}
 			},
 			borderRadius: {
