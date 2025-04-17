@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import FeatureSection from '@/components/FeatureSection';
 import WhyUs from '@/components/WhyUs';
 import FilterSearch from '@/components/FilterSearch';
+import OffPlanProjects from '@/components/OffPlanProjects';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ const Index = () => {
       <FeatureSection />
       <WhyUs />
       <FilterSearch />
+      <OffPlanProjects />
       <CallToAction />
       <Footer />
     </div>
