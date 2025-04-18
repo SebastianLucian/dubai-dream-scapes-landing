@@ -98,7 +98,7 @@ const OffPlanProjects = () => {
   ];
 
   return (
-    <section className="py-32 px-4 relative overflow-hidden bg-gray-100">
+    <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden bg-gray-100">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
           <Cloud className="absolute top-20 left-20 text-gray-400 w-64 h-64" />
@@ -141,7 +141,8 @@ const OffPlanProjects = () => {
             }}
             className="w-full"
             onSelect={(api) => {
-              setActiveProject(api.selectedScrollSnap());
+              const selectedIndex = api.selectedScrollSnap();
+              setActiveProject(selectedIndex);
             }}
           >
             <CarouselContent className="-ml-4">
