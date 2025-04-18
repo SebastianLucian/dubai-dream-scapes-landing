@@ -12,8 +12,7 @@ import ScrollProgressLine from '@/components/ScrollProgressLine';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white relative">
-      <ScrollProgressLine />
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
       <FeatureSection />
@@ -26,11 +25,14 @@ const Index = () => {
           />
         </div>
         <div className="relative z-10">
-          <WhyUs />
-          <FilterSearch />
-          <OffPlanProjects />
-          <CallToAction />
-          <Footer />
+          <div className="relative">
+            <ScrollProgressLine />
+            <WhyUs />
+            <FilterSearch />
+            <OffPlanProjects />
+            <CallToAction />
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
