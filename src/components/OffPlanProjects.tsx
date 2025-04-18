@@ -140,9 +140,8 @@ const OffPlanProjects = () => {
               loop: true,
             }}
             className="w-full"
-            onSelect={(api) => {
-              const selectedIndex = api.selectedScrollSnap();
-              setActiveProject(selectedIndex);
+            onSelect={(api: any) => {
+              setActiveProject(api.selectedScrollSnap());
             }}
           >
             <CarouselContent className="-ml-4">
