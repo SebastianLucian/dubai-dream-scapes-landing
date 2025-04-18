@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Building2, MapPin } from 'lucide-react';
+import { ArrowRight, Building2, MapPin, Cloud } from 'lucide-react';
 
 interface ProjectCardProps {
   name: string;
@@ -29,7 +28,7 @@ const ProjectCard = ({ name, image, price, location, index }: ProjectCardProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
         
-        <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">
+        <div className="absolute top-4 right-4 bg-black/20 backdrop-blur-md px-3 py-1 rounded-full">
           <span className="text-white/90 text-sm font-medium">{price}</span>
         </div>
         
@@ -99,9 +98,16 @@ const OffPlanProjects = () => {
   ];
 
   return (
-    <section className="py-32 px-4 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-gray-50 to-transparent"></div>
+    <section className="py-32 px-4 relative overflow-hidden bg-gray-100">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <Cloud className="absolute top-20 left-20 text-gray-400 w-64 h-64" />
+          <Cloud className="absolute top-40 right-40 text-gray-400 w-48 h-48" />
+          <Cloud className="absolute bottom-20 left-1/3 text-gray-400 w-56 h-56" />
+        </div>
+      </div>
+      
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-gray-100 to-transparent"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 rounded-full bg-nexora-purple/5 filter blur-3xl"></div>
       <div className="absolute -right-40 bottom-40 w-96 h-96 rounded-full bg-nexora-gold/5 filter blur-3xl"></div>
       
@@ -114,7 +120,7 @@ const OffPlanProjects = () => {
           className="text-center mb-20"
         >
           <span className="inline-block text-nexora-gold font-semibold mb-4 px-4 py-1.5 rounded-full bg-nexora-gold/10 text-sm">EXCLUSIVE OPPORTUNITIES</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Browse <span className="text-nexora-purple">Off-Plan</span> Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">Browse <span className="text-nexora-purple">Off-Plan</span> Projects</h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "5rem" }}
@@ -135,9 +141,7 @@ const OffPlanProjects = () => {
             }}
             className="w-full"
             onSelect={(api) => {
-              if (api) {
-                setActiveProject(api.selectedScrollSnap());
-              }
+              setActiveProject(api.selectedScrollSnap());
             }}
           >
             <CarouselContent className="-ml-4">
@@ -158,7 +162,6 @@ const OffPlanProjects = () => {
           </Carousel>
         </div>
 
-        {/* Project indicator dots */}
         <div className="flex justify-center mt-12 gap-2">
           {projects.map((_, index) => (
             <button
