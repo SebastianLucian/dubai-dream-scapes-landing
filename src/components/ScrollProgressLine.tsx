@@ -15,13 +15,13 @@ const ScrollProgressLine = () => {
         const sectionHeight = rect.height;
         const windowHeight = window.innerHeight;
         
-        // Check if section is in view
-        if (sectionTop <= windowHeight && sectionTop + sectionHeight >= 0) {
+        // Only show when 30% into the section
+        if (sectionTop <= windowHeight * 0.7 && sectionTop + sectionHeight >= 0) {
           setIsVisible(true);
           
-          // Calculate progress based on section visibility
+          // Calculate progress based on section visibility, starting later
           const visibleHeight = windowHeight - sectionTop;
-          const progress = (visibleHeight / sectionHeight) * 100;
+          const progress = ((visibleHeight / sectionHeight) * 100) - 30; // Start 30% later
           setScrollProgress(Math.min(100, Math.max(0, progress)));
         } else {
           setIsVisible(false);
@@ -65,7 +65,7 @@ const ScrollProgressLine = () => {
         {/* Animated underline */}
         <path
           d="M0,20 H180"
-          stroke="url(#blueGradient)"
+          stroke="url(#brightGradient)"
           strokeWidth="4"
           strokeLinecap="round"
           strokeDasharray="180"
@@ -76,7 +76,7 @@ const ScrollProgressLine = () => {
         {/* Animated main path */}
         <path
           d="M180,20 C180,20 180,100 180,150 C180,200 20,250 20,300 L20,600"
-          stroke="url(#blueGradient)"
+          stroke="url(#brightGradient)"
           strokeWidth="4"
           strokeLinecap="round"
           strokeDasharray="800"
@@ -84,32 +84,12 @@ const ScrollProgressLine = () => {
           className="transition-all duration-300"
         />
 
-        {/* Gradient definitions */}
-        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#33C3F0" stopOpacity="0.2" />
+        {/* Enhanced bright gradient definition */}
+        <linearGradient id="brightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#33C3F0" stopOpacity="0.6" />
           <stop offset="50%" stopColor="#33C3F0" />
-          <stop offset="100%" stopColor="#33C3F0" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#33C3F0" stopOpacity="0.6" />
         </linearGradient>
-
-        {/* Animated circle */}
-        <circle
-          cx={scrollProgress < 20 ? scrollProgress * 9 : 
-              scrollProgress < 40 ? 180 :
-              20}
-          cy={scrollProgress < 20 ? 20 :
-              scrollProgress < 40 ? ((scrollProgress - 20) * 7.5) + 20 :
-              300 + ((scrollProgress - 40) * 6)}
-          r="6"
-          fill="#33C3F0"
-          className="transition-all duration-300"
-        >
-          <animate
-            attributeName="r"
-            values="4;6;4"
-            dur="1.5s"
-            repeatCount="indefinite"
-          />
-        </circle>
       </svg>
     </div>
   );

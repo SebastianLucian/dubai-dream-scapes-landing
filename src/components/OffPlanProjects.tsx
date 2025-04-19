@@ -99,13 +99,12 @@ const OffPlanProjects = () => {
 
   return (
     <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden bg-gray-100">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5">
-          <Cloud className="absolute top-20 left-20 text-gray-400 w-64 h-64" />
-          <Cloud className="absolute top-40 right-40 text-gray-400 w-48 h-48" />
-          <Cloud className="absolute bottom-20 left-1/3 text-gray-400 w-56 h-56" />
-        </div>
-      </div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={{
+          backgroundImage: "url('/lovable-uploads/e713ef57-e7de-4e28-b774-f94b71a109c8.png')"
+        }}
+      />
       
       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-gray-100 to-transparent"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 rounded-full bg-nexora-purple/5 filter blur-3xl"></div>
