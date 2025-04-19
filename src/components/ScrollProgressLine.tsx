@@ -21,7 +21,7 @@ const ScrollProgressLine = () => {
           
           // Calculate progress based on section visibility, starting later
           const visibleHeight = windowHeight - sectionTop;
-          const progress = ((visibleHeight / sectionHeight) * 100) - 30; // Start 30% later
+          const progress = ((visibleHeight / sectionHeight) * 100) - 30;
           setScrollProgress(Math.min(100, Math.max(0, progress)));
         } else {
           setIsVisible(false);
@@ -30,14 +30,14 @@ const ScrollProgressLine = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (!isVisible) return null;
 
   return (
-    <div className="absolute right-[15%] top-0 h-full pointer-events-none">
+    <div className="absolute left-[15%] top-0 h-full pointer-events-none">
       <svg
         className="h-[600px] w-[200px]"
         viewBox="0 0 200 600"
@@ -46,7 +46,7 @@ const ScrollProgressLine = () => {
       >
         {/* Title underline path */}
         <path
-          d="M0,20 H180"
+          d="M20,20 H200"
           stroke="#D3E4FD"
           strokeWidth="3"
           strokeLinecap="round"
@@ -55,7 +55,7 @@ const ScrollProgressLine = () => {
         
         {/* Main vertical path */}
         <path
-          d="M180,20 C180,20 180,100 180,150 C180,200 20,250 20,300 L20,600"
+          d="M20,20 C20,20 20,100 20,150 C20,200 180,200 180,250 L180,600"
           stroke="#D3E4FD"
           strokeWidth="3"
           strokeLinecap="round"
@@ -64,7 +64,7 @@ const ScrollProgressLine = () => {
 
         {/* Animated underline */}
         <path
-          d="M0,20 H180"
+          d="M20,20 H200"
           stroke="url(#brightGradient)"
           strokeWidth="4"
           strokeLinecap="round"
@@ -75,7 +75,7 @@ const ScrollProgressLine = () => {
 
         {/* Animated main path */}
         <path
-          d="M180,20 C180,20 180,100 180,150 C180,200 20,250 20,300 L20,600"
+          d="M20,20 C20,20 20,100 20,150 C20,200 180,200 180,250 L180,600"
           stroke="url(#brightGradient)"
           strokeWidth="4"
           strokeLinecap="round"

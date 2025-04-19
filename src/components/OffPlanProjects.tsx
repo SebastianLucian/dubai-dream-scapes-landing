@@ -100,9 +100,9 @@ const OffPlanProjects = () => {
   return (
     <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden bg-gray-100">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
         style={{
-          backgroundImage: "url('/lovable-uploads/e713ef57-e7de-4e28-b774-f94b71a109c8.png')"
+          backgroundImage: "url('/lovable-uploads/875ea466-fb5d-4149-a660-afc185f777bd.png')"
         }}
       />
       
