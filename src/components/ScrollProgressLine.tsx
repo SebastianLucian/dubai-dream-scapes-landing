@@ -12,18 +12,16 @@ const ScrollProgressLine = () => {
       if (whyUsSection) {
         const rect = whyUsSection.getBoundingClientRect();
         const sectionTop = rect.top;
-        const sectionBottom = rect.bottom;
+        const sectionHeight = rect.height;
         const windowHeight = window.innerHeight;
         
         // Check if section is in view
-        if (sectionTop <= windowHeight && sectionBottom >= 0) {
+        if (sectionTop <= windowHeight && sectionTop + sectionHeight >= 0) {
           setIsVisible(true);
           
-          // Calculate progress only within the section
-          const sectionHeight = rect.height;
-          const visibleHeight = Math.min(sectionBottom, windowHeight) - Math.max(sectionTop, 0);
+          // Calculate progress based on section visibility
+          const visibleHeight = windowHeight - sectionTop;
           const progress = (visibleHeight / sectionHeight) * 100;
-          
           setScrollProgress(Math.min(100, Math.max(0, progress)));
         } else {
           setIsVisible(false);
@@ -39,74 +37,80 @@ const ScrollProgressLine = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="pointer-events-none" style={{ position: 'absolute', top: 0, right: 0, height: '100%' }}>
-      <div className="w-[300px] h-full">
-        <svg
-          className="absolute top-[120px] right-8 w-[300px] h-[600px]"
-          viewBox="0 0 300 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+    <div className="absolute right-[15%] top-0 h-full pointer-events-none">
+      <svg
+        className="h-[600px] w-[200px]"
+        viewBox="0 0 200 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Title underline path */}
+        <path
+          d="M0,20 H180"
+          stroke="#D3E4FD"
+          strokeWidth="3"
+          strokeLinecap="round"
+          className="opacity-30"
+        />
+        
+        {/* Main vertical path */}
+        <path
+          d="M180,20 C180,20 180,100 180,150 C180,200 20,250 20,300 L20,600"
+          stroke="#D3E4FD"
+          strokeWidth="3"
+          strokeLinecap="round"
+          className="opacity-30"
+        />
+
+        {/* Animated underline */}
+        <path
+          d="M0,20 H180"
+          stroke="url(#blueGradient)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray="180"
+          strokeDashoffset={180 - (Math.min(scrollProgress * 2, 180))}
+          className="transition-all duration-300"
+        />
+
+        {/* Animated main path */}
+        <path
+          d="M180,20 C180,20 180,100 180,150 C180,200 20,250 20,300 L20,600"
+          stroke="url(#blueGradient)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray="800"
+          strokeDashoffset={800 - (scrollProgress * 8)}
+          className="transition-all duration-300"
+        />
+
+        {/* Gradient definitions */}
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#33C3F0" stopOpacity="0.2" />
+          <stop offset="50%" stopColor="#33C3F0" />
+          <stop offset="100%" stopColor="#33C3F0" stopOpacity="0.2" />
+        </linearGradient>
+
+        {/* Animated circle */}
+        <circle
+          cx={scrollProgress < 20 ? scrollProgress * 9 : 
+              scrollProgress < 40 ? 180 :
+              20}
+          cy={scrollProgress < 20 ? 20 :
+              scrollProgress < 40 ? ((scrollProgress - 20) * 7.5) + 20 :
+              300 + ((scrollProgress - 40) * 6)}
+          r="6"
+          fill="#33C3F0"
+          className="transition-all duration-300"
         >
-          {/* Background path */}
-          <path
-            d="M0,20 H280 Q290,20 290,30 V200 Q290,220 270,220 H30 Q10,220 10,240 V600"
-            stroke="#D3E4FD"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeDasharray="1000"
-            className="opacity-30"
+          <animate
+            attributeName="r"
+            values="4;6;4"
+            dur="1.5s"
+            repeatCount="indefinite"
           />
-          
-          {/* Animated path with gradient */}
-          <path
-            d="M0,20 H280 Q290,20 290,30 V200 Q290,220 270,220 H30 Q10,220 10,240 V600"
-            stroke="url(#gradient)"
-            strokeWidth="6"
-            strokeLinecap="round"
-            strokeDasharray="1000"
-            strokeDashoffset={1000 - (scrollProgress * 10)}
-            className="transition-all duration-300"
-            style={{ filter: 'blur(4px)' }}
-          />
-          
-          {/* Title underline path */}
-          <path
-            d="M0,20 H280"
-            stroke="#D3E4FD"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeDasharray="280"
-            strokeDashoffset={280 - (Math.min(scrollProgress * 3, 280))}
-            className="transition-all duration-300"
-          />
-
-          {/* Gradient definition */}
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#33C3F0" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#33C3F0" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#33C3F0" stopOpacity="0.2" />
-          </linearGradient>
-
-          {/* Animated circle */}
-          <circle
-            cx={scrollProgress < 30 ? scrollProgress * 9.33 : 280}
-            cy={scrollProgress < 30 ? 20 : 
-               scrollProgress < 50 ? 20 + ((scrollProgress - 30) * 6.67) : 
-               scrollProgress < 70 ? 220 : 
-               220 + ((scrollProgress - 70) * 12.67)}
-            r="6"
-            fill="#33C3F0"
-            className="transition-all duration-300"
-          >
-            <animate
-              attributeName="r"
-              values="6;8;6"
-              dur="1.5s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </svg>
-      </div>
+        </circle>
+      </svg>
     </div>
   );
 };

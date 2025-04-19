@@ -42,9 +42,8 @@ const WhyUs = () => {
         <div className="absolute w-full h-full border-[10px] border-nexora-purple/5 rounded-full transform -rotate-12"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative">
         <div className="relative">
-          <ScrollProgressLine />
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,6 +57,8 @@ const WhyUs = () => {
               Experience unparalleled service and expertise in Dubai's luxury real estate market
             </p>
           </motion.div>
+          
+          <ScrollProgressLine />
           
           <div className="grid md:grid-cols-3 gap-10">
             <ReasonCard 
