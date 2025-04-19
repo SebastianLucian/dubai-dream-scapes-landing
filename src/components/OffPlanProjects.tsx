@@ -98,15 +98,16 @@ const OffPlanProjects = () => {
   ];
 
   return (
-    <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden bg-gray-100">
+    <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+        className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-90"
         style={{
-          backgroundImage: "url('/lovable-uploads/875ea466-fb5d-4149-a660-afc185f777bd.png')"
+          backgroundImage: "url('/lovable-uploads/875ea466-fb5d-4149-a660-afc185f777bd.png')",
+          filter: "brightness(1.1)"
         }}
       />
       
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-gray-100 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-transparent opacity-90"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 rounded-full bg-nexora-purple/5 filter blur-3xl"></div>
       <div className="absolute -right-40 bottom-40 w-96 h-96 rounded-full bg-nexora-gold/5 filter blur-3xl"></div>
       
