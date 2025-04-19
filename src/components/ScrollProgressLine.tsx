@@ -3,26 +3,30 @@ import React, { useEffect, useState } from 'react';
 
 const ScrollProgressLine = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const startElement = document.getElementById('why-choose-section');
-      const endElement = document.getElementById('browse-projects-section');
+      const whyUsSection = document.getElementById('why-choose-section');
       
-      if (startElement && endElement) {
-        const startPosition = startElement.offsetTop;
-        const endPosition = endElement.offsetTop;
-        const currentScroll = window.scrollY;
+      if (whyUsSection) {
+        const rect = whyUsSection.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
         const windowHeight = window.innerHeight;
-        const sectionStart = startPosition - windowHeight / 2;
         
-        if (currentScroll < sectionStart) {
-          setScrollProgress(0);
-        } else if (currentScroll > endPosition) {
-          setScrollProgress(100);
-        } else {
-          const progress = ((currentScroll - sectionStart) / (endPosition - sectionStart)) * 100;
+        // Check if section is in view
+        if (sectionTop <= windowHeight && sectionBottom >= 0) {
+          setIsVisible(true);
+          
+          // Calculate progress only within the section
+          const sectionHeight = rect.height;
+          const visibleHeight = Math.min(sectionBottom, windowHeight) - Math.max(sectionTop, 0);
+          const progress = (visibleHeight / sectionHeight) * 100;
+          
           setScrollProgress(Math.min(100, Math.max(0, progress)));
+        } else {
+          setIsVisible(false);
         }
       }
     };
@@ -32,9 +36,11 @@ const ScrollProgressLine = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (!isVisible) return null;
+
   return (
-    <div className="pointer-events-none">
-      <div className="fixed top-0 right-0 w-[300px] h-screen" style={{ position: 'fixed' }}>
+    <div className="pointer-events-none" style={{ position: 'absolute', top: 0, right: 0, height: '100%' }}>
+      <div className="w-[300px] h-full">
         <svg
           className="absolute top-[120px] right-8 w-[300px] h-[600px]"
           viewBox="0 0 300 600"
@@ -106,4 +112,3 @@ const ScrollProgressLine = () => {
 };
 
 export default ScrollProgressLine;
-

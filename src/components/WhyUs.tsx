@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, Gem } from 'lucide-react';
 import { motion } from 'framer-motion';
+import ScrollProgressLine from './ScrollProgressLine';
 
 interface ReasonCardProps {
   icon: React.ReactNode;
@@ -42,41 +43,44 @@ const WhyUs = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose <span className="text-nexora-purple">Nexora</span></h2>
-          <div className="w-20 h-1 bg-nexora-gold mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Experience unparalleled service and expertise in Dubai's luxury real estate market
-          </p>
-        </motion.div>
-        
-        <div className="grid md:grid-cols-3 gap-10">
-          <ReasonCard 
-            icon={<Award size={44} strokeWidth={1.5} className="text-nexora-gold" />}
-            title="Market Expertise"
-            description="Our team has over 15 years of experience in Dubai's real estate market, offering unmatched insights and expertise."
-            delay={0.1}
-          />
+        <div className="relative">
+          <ScrollProgressLine />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose <span className="text-nexora-purple">Nexora</span></h2>
+            <div className="w-20 h-1 bg-nexora-gold mx-auto mb-8"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Experience unparalleled service and expertise in Dubai's luxury real estate market
+            </p>
+          </motion.div>
           
-          <ReasonCard 
-            icon={<Users size={44} strokeWidth={1.5} className="text-nexora-gold" />}
-            title="Exclusive Network"
-            description="Access to an extensive network of high-net-worth investors, developers, and property owners across the UAE."
-            delay={0.3}
-          />
-          
-          <ReasonCard 
-            icon={<Gem size={44} strokeWidth={1.5} className="text-nexora-gold" />}
-            title="Premium Service"
-            description="White-glove service tailored to your specific needs, ensuring a seamless experience from initial consultation to closing."
-            delay={0.5}
-          />
+          <div className="grid md:grid-cols-3 gap-10">
+            <ReasonCard 
+              icon={<Award size={44} strokeWidth={1.5} className="text-nexora-gold" />}
+              title="Market Expertise"
+              description="Our team has over 15 years of experience in Dubai's real estate market, offering unmatched insights and expertise."
+              delay={0.1}
+            />
+            
+            <ReasonCard 
+              icon={<Users size={44} strokeWidth={1.5} className="text-nexora-gold" />}
+              title="Exclusive Network"
+              description="Access to an extensive network of high-net-worth investors, developers, and property owners across the UAE."
+              delay={0.3}
+            />
+            
+            <ReasonCard 
+              icon={<Gem size={44} strokeWidth={1.5} className="text-nexora-gold" />}
+              title="Premium Service"
+              description="White-glove service tailored to your specific needs, ensuring a seamless experience from initial consultation to closing."
+              delay={0.5}
+            />
+          </div>
         </div>
       </div>
     </section>

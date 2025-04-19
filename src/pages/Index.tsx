@@ -8,7 +8,6 @@ import FilterSearch from '@/components/FilterSearch';
 import OffPlanProjects from '@/components/OffPlanProjects';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
-import ScrollProgressLine from '@/components/ScrollProgressLine';
 
 const Index = () => {
   return (
@@ -26,7 +25,6 @@ const Index = () => {
         </div>
         <div className="relative z-10">
           <div className="relative">
-            <ScrollProgressLine />
             <WhyUs />
             <FilterSearch />
             <OffPlanProjects />
