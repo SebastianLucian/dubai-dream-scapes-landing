@@ -1,64 +1,13 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Building2, MapPin, Cloud } from 'lucide-react';
-
-interface ProjectCardProps {
-  name: string;
-  image: string;
-  price: string;
-  location: string;
-  index: number;
-}
-
-const ProjectCard = ({ name, image, price, location, index }: ProjectCardProps) => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group overflow-hidden rounded-2xl"
-    >
-      <div className="relative h-[480px] w-[350px] overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-        <img 
-          src={image} 
-          alt={name} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-        
-        <div className="absolute top-4 right-4 bg-black/20 backdrop-blur-md px-3 py-1 rounded-full">
-          <span className="text-white/90 text-sm font-medium">{price}</span>
-        </div>
-        
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h3 className="text-2xl font-bold mb-2">{name}</h3>
-          <div className="flex justify-between items-end">
-            <div className="flex items-center text-white/80 mb-1">
-              <MapPin className="h-4 w-4 mr-1 text-nexora-gold" />
-              <p className="text-sm">{location}</p>
-            </div>
-            
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 text-white rounded-full overflow-hidden group-hover:pr-6 transition-all duration-300"
-            >
-              <span className="relative z-10">View</span>
-              <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+import { ArrowRight, Building2 } from 'lucide-react';
+import ProjectCard from './ProjectCard';
 
 const OffPlanProjects = () => {
   const [activeProject, setActiveProject] = useState(0);
-  
+
   const projects = [
     {
       name: "Bugatti Tower",
@@ -103,25 +52,13 @@ const OffPlanProjects = () => {
       id="browse-projects-section"
       className="py-32 px-4 relative overflow-hidden"
       style={{
-        backgroundImage: "url('/lovable-uploads/aff3da6a-0d3c-4311-8b7d-6f00ec97afa3.png')",
+        backgroundImage: "url('/lovable-uploads/05d60c46-2dbc-4fb1-b047-6e7878da5b31.png')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "fixed"
       }}
     >
-      {/* NO overlay/gradient/divs anymore */}
-      {/* <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-90"
-        style={{
-          backgroundImage: "url('/lovable-uploads/875ea466-fb5d-4149-a660-afc185f777bd.png')",
-          filter: "brightness(1.1)"
-        }}
-      /> */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-transparent opacity-90"></div>
-      <div className="absolute -left-40 top-40 w-80 h-80 rounded-full bg-nexora-purple/5 filter blur-3xl"></div>
-      <div className="absolute -right-40 bottom-40 w-96 h-96 rounded-full bg-nexora-gold/5 filter blur-3xl"></div> */}
-
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -210,4 +147,3 @@ const OffPlanProjects = () => {
 };
 
 export default OffPlanProjects;
-
