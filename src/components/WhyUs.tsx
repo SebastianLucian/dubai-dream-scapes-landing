@@ -2,6 +2,7 @@ import React from 'react';
 import { Award, Users, Gem } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ScrollProgressLine from './ScrollProgressLine';
+import ScrollProgressLineMirror from './ScrollProgressLineMirror';
 
 interface ReasonCardProps {
   icon: React.ReactNode;
@@ -59,7 +60,8 @@ const WhyUs = () => {
           </motion.div>
           
           <ScrollProgressLine />
-          
+          <ScrollProgressLineMirror />
+
           <div className="grid md:grid-cols-3 gap-10">
             <ReasonCard 
               icon={<Award size={44} strokeWidth={1.5} className="text-nexora-gold" />}
