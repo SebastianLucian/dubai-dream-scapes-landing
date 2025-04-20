@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -98,19 +99,29 @@ const OffPlanProjects = () => {
   ];
 
   return (
-    <section id="browse-projects-section" className="py-32 px-4 relative overflow-hidden">
-      <div 
+    <section
+      id="browse-projects-section"
+      className="py-32 px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/lovable-uploads/aff3da6a-0d3c-4311-8b7d-6f00ec97afa3.png')",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* NO overlay/gradient/divs anymore */}
+      {/* <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-90"
         style={{
           backgroundImage: "url('/lovable-uploads/875ea466-fb5d-4149-a660-afc185f777bd.png')",
           filter: "brightness(1.1)"
         }}
-      />
-      
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-transparent opacity-90"></div>
+      /> */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-transparent opacity-90"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 rounded-full bg-nexora-purple/5 filter blur-3xl"></div>
-      <div className="absolute -right-40 bottom-40 w-96 h-96 rounded-full bg-nexora-gold/5 filter blur-3xl"></div>
-      
+      <div className="absolute -right-40 bottom-40 w-96 h-96 rounded-full bg-nexora-gold/5 filter blur-3xl"></div> */}
+
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -199,3 +210,4 @@ const OffPlanProjects = () => {
 };
 
 export default OffPlanProjects;
+
