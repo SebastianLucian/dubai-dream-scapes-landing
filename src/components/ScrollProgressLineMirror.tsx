@@ -8,20 +8,20 @@ const ScrollProgressLineMirror = () => {
   useEffect(() => {
     const handleScroll = () => {
       const whyUsSection = document.getElementById('why-choose-section');
-
+      
       if (whyUsSection) {
         const rect = whyUsSection.getBoundingClientRect();
         const sectionTop = rect.top;
         const sectionHeight = rect.height;
         const windowHeight = window.innerHeight;
-
-        // Start the animation lower: only show after ~75% of the section has entered the viewport
-        if (sectionTop <= windowHeight * 0.25 && sectionTop + sectionHeight >= 0) {
+        
+        // Only show when 30% into the section
+        if (sectionTop <= windowHeight * 0.7 && sectionTop + sectionHeight >= 0) {
           setIsVisible(true);
-
-          // Progress only shows in the lower portion of section
-          const visibleHeight = windowHeight - sectionTop - windowHeight * 0.25;
-          const progress = ((visibleHeight / sectionHeight) * 100);
+          
+          // Calculate progress based on section visibility, starting later
+          const visibleHeight = windowHeight - sectionTop;
+          const progress = ((visibleHeight / sectionHeight) * 100) - 30;
           setScrollProgress(Math.min(100, Math.max(0, progress)));
         } else {
           setIsVisible(false);
@@ -36,7 +36,7 @@ const ScrollProgressLineMirror = () => {
 
   if (!isVisible) return null;
 
-  // Mirror the line horizontally: use "right" instead of "left"
+  // Mirrored progress line: right side and flipped horizontally
   return (
     <div className="absolute right-[15%] top-0 h-full pointer-events-none">
       <svg
@@ -46,7 +46,7 @@ const ScrollProgressLineMirror = () => {
         xmlns="http://www.w3.org/2000/svg"
         style={{ transform: 'scaleX(-1)' }} // Mirror horizontally
       >
-        {/* Title underline path - mirrored */}
+        {/* Title underline path */}
         <path
           d="M20,20 H200"
           stroke="#D3E4FD"
@@ -54,8 +54,8 @@ const ScrollProgressLineMirror = () => {
           strokeLinecap="round"
           className="opacity-30"
         />
-
-        {/* Main vertical path - mirrored */}
+        
+        {/* Main vertical path */}
         <path
           d="M20,20 C20,20 20,100 20,150 C20,200 180,200 180,250 L180,600"
           stroke="#D3E4FD"
@@ -64,7 +64,7 @@ const ScrollProgressLineMirror = () => {
           className="opacity-30"
         />
 
-        {/* Animated underline - mirrored */}
+        {/* Animated underline */}
         <path
           d="M20,20 H200"
           stroke="url(#brightGradient)"
@@ -75,7 +75,7 @@ const ScrollProgressLineMirror = () => {
           className="transition-all duration-300"
         />
 
-        {/* Animated main path - mirrored */}
+        {/* Animated main path */}
         <path
           d="M20,20 C20,20 20,100 20,150 C20,200 180,200 180,250 L180,600"
           stroke="url(#brightGradient)"
