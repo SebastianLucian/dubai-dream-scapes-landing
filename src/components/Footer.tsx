@@ -23,40 +23,32 @@ const Footer = () => {
               Luxury properties and exclusive investments in Dubai's premium locations.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-nexora-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="hover:text-nexora-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:text-nexora-gold transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="hover:text-nexora-gold transition-colors">
-                <Linkedin size={20} />
-              </a>
+              <Facebook size={20} className="text-gray-300" />
+              <Instagram size={20} className="text-gray-300" />
+              <Twitter size={20} className="text-gray-300" />
+              <Linkedin size={20} className="text-gray-300" />
             </div>
           </div>
           
           <div>
             <h4 className="text-xl font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Properties</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Exclusive Deals</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Contact</a></li>
+              <li className="text-gray-300">Home</li>
+              <li className="text-gray-300">Properties</li>
+              <li className="text-gray-300">Exclusive Deals</li>
+              <li className="text-gray-300">About Us</li>
+              <li className="text-gray-300">Contact</li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-xl font-semibold text-white mb-4">Featured Areas</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Palm Jumeirah</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Downtown Dubai</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Dubai Marina</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Emirates Hills</a></li>
-              <li><a href="#" className="hover:text-nexora-gold transition-colors">Jumeirah Beach Residence</a></li>
+              <li className="text-gray-300">Palm Jumeirah</li>
+              <li className="text-gray-300">Downtown Dubai</li>
+              <li className="text-gray-300">Dubai Marina</li>
+              <li className="text-gray-300">Emirates Hills</li>
+              <li className="text-gray-300">Jumeirah Beach Residence</li>
             </ul>
           </div>
           
