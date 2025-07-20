@@ -4,8 +4,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import FeatureSection from '@/components/FeatureSection';
 import WhyUs from '@/components/WhyUs';
-import FilterSearch from '@/components/FilterSearch';
-import OffPlanProjects from '@/components/OffPlanProjects';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -26,8 +24,6 @@ const Index = () => {
         <div className="relative z-10">
           <div className="relative">
             <WhyUs />
-            <FilterSearch />
-            <OffPlanProjects />
             <CallToAction />
             <Footer />
           </div>
