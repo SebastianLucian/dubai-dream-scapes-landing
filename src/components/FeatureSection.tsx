@@ -11,7 +11,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ image, title, description, icon }: FeatureCardProps) => {
   return (
-    <div className="relative h-[500px] flex-1 group overflow-hidden">
+    <div className="relative h-[500px] w-full md:flex-1 group overflow-hidden">
       <div className="absolute inset-0">
         <img 
           src={image} 
