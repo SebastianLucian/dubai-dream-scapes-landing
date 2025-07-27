@@ -10,7 +10,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/f7fb1506-aec1-4036-aa01-aacad0546f09.png" 
             alt="Nexora Real Estate Logo" 
-            className="h-16 w-auto"
+            className="h-32 w-auto"
           />
         </div>
         <Button className="bg-nexora-gold hover:bg-amber-600 text-white">
