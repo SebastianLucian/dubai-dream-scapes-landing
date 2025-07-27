@@ -8,9 +8,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/c761eab5-cccf-4944-83c9-923b4c5e2e03.png" 
+            src="/lovable-uploads/f7fb1506-aec1-4036-aa01-aacad0546f09.png" 
             alt="Nexora Real Estate Logo" 
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
         </div>
         <Button className="bg-nexora-gold hover:bg-amber-600 text-white">
