@@ -9,7 +9,7 @@ const Navbar = () => {
         <img 
           src="/lovable-uploads/f7fb1506-aec1-4036-aa01-aacad0546f09.png" 
           alt="Nexora Real Estate Logo" 
-          className="h-24 w-auto object-contain"
+          className="h-[620px] w-auto object-contain"
         />
       </div>
       <div className="container mx-auto px-4 py-4 flex items-start justify-end">
