@@ -6,9 +6,9 @@ const Hero = () => {
     <div className="relative h-screen flex items-center justify-center">
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/05d60c46-2dbc-4fb1-b047-6e7878da5b31.png"
+          src="/lovable-uploads/461e6a91-1a6b-4ed5-8e06-6f02385f7a07.png"
           className="w-full h-full object-cover"
-          alt="Dubai Skyline Above Clouds"
+          alt="Dubai Skyline Sunset with Burj Khalifa"
         />
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       </div>
