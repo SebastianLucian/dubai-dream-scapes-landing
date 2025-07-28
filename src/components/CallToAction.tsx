@@ -20,7 +20,7 @@ const CallToAction = () => {
             Schedule a personalized consultation with our luxury real estate experts today
           </p>
           
-          <Button className="bg-nexora-gold hover:bg-amber-600 text-white text-lg px-10 py-6">
+          <Button className="bg-[#0F4E81] hover:bg-[#0F4E81]/90 text-white text-lg px-10 py-6">
             <PhoneCall className="mr-2" size={20} />
             Book a Consultation
           </Button>

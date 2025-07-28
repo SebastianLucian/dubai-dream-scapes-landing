@@ -30,7 +30,7 @@ const FilterSearch = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-3">Ask for it and we shall <span className="text-nexora-purple">deliver</span></h2>
-          <div className="w-20 h-1 bg-nexora-gold mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-[#0F4E81] mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Find your dream property in Dubai with our advanced property search
           </p>
@@ -42,7 +42,7 @@ const FilterSearch = () => {
               {/* Area Dropdown */}
               <div className="md:col-span-4 space-y-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-                  <MapPin className="mr-2 h-4 w-4 text-nexora-gold" />
+                  <MapPin className="mr-2 h-4 w-4 text-[#0F4E81]" />
                   Area
                 </label>
                 <Select value={area} onValueChange={setArea}>
@@ -62,7 +62,7 @@ const FilterSearch = () => {
               {/* Budget Slider */}
               <div className="md:col-span-4 space-y-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-                  <Banknote className="mr-2 h-4 w-4 text-nexora-gold" />
+                  <Banknote className="mr-2 h-4 w-4 text-[#0F4E81]" />
                   Budget (AED)
                 </label>
                 <div className="pt-6 px-2">
@@ -82,7 +82,7 @@ const FilterSearch = () => {
               {/* Square Meters Slider */}
               <div className="md:col-span-4 space-y-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-                  <Home className="mr-2 h-4 w-4 text-nexora-gold" />
+                  <Home className="mr-2 h-4 w-4 text-[#0F4E81]" />
                   Square Meters
                 </label>
                 <div className="pt-6 px-2">
@@ -103,7 +103,7 @@ const FilterSearch = () => {
             <div className="mt-10 text-center">
               <Button 
                 onClick={handleSearch}
-                className="bg-nexora-gold hover:bg-amber-600 text-white px-8 py-3 rounded-full"
+                className="bg-[#0F4E81] hover:bg-[#0F4E81]/90 text-white px-8 py-3 rounded-full"
               >
                 <Search className="mr-2 h-4 w-4" />
                 Find Properties

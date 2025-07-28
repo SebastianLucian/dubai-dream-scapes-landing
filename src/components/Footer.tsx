@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              <span className="text-nexora-gold">NEXORA</span> REAL ESTATE
+              <span className="text-[#0F4E81]">NEXORA</span> REAL ESTATE
             </h3>
             <p className="mb-4">
               Luxury properties and exclusive investments in Dubai's premium locations.
@@ -45,15 +45,15 @@ const Footer = () => {
             <h4 className="text-xl font-semibold text-white mb-4">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="mr-2 mt-1 text-nexora-gold" size={18} />
+                <MapPin className="mr-2 mt-1 text-[#0F4E81]" size={18} />
                 <span>Downtown Dubai, Business Bay, Dubai, UAE</span>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-2 text-nexora-gold" size={18} />
+                <Phone className="mr-2 text-[#0F4E81]" size={18} />
                 <span>+971 4 XXX XXXX</span>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-2 text-nexora-gold" size={18} />
+                <Mail className="mr-2 text-[#0F4E81]" size={18} />
                 <span>info@nexora-realestate.com</span>
               </li>
             </ul>

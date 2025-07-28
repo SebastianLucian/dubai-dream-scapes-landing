@@ -32,7 +32,7 @@ const ProjectCard = ({ name, image, price, location, index }: ProjectCardProps) 
         <h3 className="text-2xl font-bold mb-2">{name}</h3>
         <div className="flex justify-between items-end">
           <div className="flex items-center text-white/80 mb-1">
-            <MapPin className="h-4 w-4 mr-1 text-nexora-gold" />
+            <MapPin className="h-4 w-4 mr-1 text-[#0F4E81]" />
             <p className="text-sm">{location}</p>
           </div>
           <Button 

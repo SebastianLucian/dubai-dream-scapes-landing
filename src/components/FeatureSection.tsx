@@ -22,7 +22,7 @@ const FeatureCard = ({ image, title, description, icon }: FeatureCardProps) => {
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 p-8 text-white transition-all duration-300 group-hover:pb-12">
-        <div className="mb-4 bg-nexora-gold p-3 inline-block rounded-full text-white">
+        <div className="mb-4 bg-[#0F4E81] p-3 inline-block rounded-full text-white">
           {icon}
         </div>
         <h3 className="text-2xl font-bold mb-3">{title}</h3>

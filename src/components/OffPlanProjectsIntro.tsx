@@ -10,7 +10,7 @@ const OffPlanProjectsIntro = () => (
     viewport={{ once: true }}
     className="text-center mb-20"
   >
-    <span className="inline-block text-nexora-gold font-semibold mb-4 px-4 py-1.5 rounded-full bg-nexora-gold/10 text-sm">
+    <span className="inline-block text-[#0F4E81] font-semibold mb-4 px-4 py-1.5 rounded-full bg-[#0F4E81]/10 text-sm">
       EXCLUSIVE OPPORTUNITIES
     </span>
     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">
@@ -21,7 +21,7 @@ const OffPlanProjectsIntro = () => (
       whileInView={{ width: "5rem" }}
       transition={{ duration: 0.8, delay: 0.2 }}
       viewport={{ once: true }}
-      className="h-1 bg-gradient-to-r from-nexora-purple to-nexora-gold mx-auto mb-8"
+      className="h-1 bg-gradient-to-r from-nexora-purple to-[#0F4E81] mx-auto mb-8"
     ></motion.div>
     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
       Explore Dubai&apos;s most prestigious upcoming developments with exclusive pre-launch prices

@@ -15,7 +15,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-          Premium Real Estate in <span className="text-nexora-gold">Dubai</span>
+          Premium Real Estate in <span className="text-[#0F4E81]">Dubai</span>
         </h1>
         <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
           Discover exclusive properties in the world's most luxurious city
